@@ -46,7 +46,7 @@ Demo Lists :
 [![](images/screenshots/TinyPlanetClouds.png)](https://disini.github.io/LOCALSDTOY/WebglTest.html?TinyPlanetClouds "TinyPlanetClouds")
 
 
-[WetStone](https://disini.github.io/LOCALSDTOY/WebglTest.html?Cook-Torrance "WetStone")
-[![](images/screenshots/WetStone.png)](https://disini.github.io/LOCALSDTOY/WebglTest.html?Cook-Torrance "WetStone")
+[WetStone](https://disini.github.io/LOCALSDTOY/WebglTest.html?WetStone "WetStone")
+[![](images/screenshots/WetStone.png)](https://disini.github.io/LOCALSDTOY/WebglTest.html?WetStone "WetStone")
 
 
