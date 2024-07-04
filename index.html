@@ -1,129 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
-    <title>shadertoy Native Player</title>
+    <title>Local Shadertoy Renderer using WebGL 2.0</title>
 </head>
 
-<body>
-    <div id="container">
-        <!-- <canvas id="webglCanvas" tabindex="0" style="position:absolute;height:100%;width:100%;"> -->
-        <!-- <canvas id="webglCanvas" tabindex="0" style="position:absolute;height:720;width:1280;"> -->
-         <!--    plass use a browser that supports "canvas"-->
-        <!-- </canvas> -->
-		<canvas id="webglCanvas" tabindex="0" width="1280" height="720" style="display: block; width: 1280px; height: 720px;"></canvas>
-    </div>
-</body>
 
-<script src="./lib/stnplayer.js"></script>
-<script>
-    window.onload = () => {
-        console.log(`start!`);
-        //which one is to play ?
-        let stoyName = `test`;
-        //can use url parameter to select res , like "http://192.168.50.134:5500/?happyJumping"
-        if (location.search[0] == "?") {
-            stoyName = location.search.substring(1);
-        }
-        console.log(`res : ${stoyName}`);
+    <body class="logged-in env-production page-responsive" style="overflow-wrap: break-word; --dialog-scrollgutter: 15px; position: relative; min-height: 100%; top: 0px;">
+    <!--<body style="height:100%;margin:0;padding:0; overflow: hidden; background-color: black;">-->
+            <div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true">
+                <article class="markdown-body entry-content container-lg" itemprop="text">
 
-        let canvas = document.getElementById("webglCanvas");
-        //get webglContext
-        let webgl2 = canvas.getContext("webgl2", { alpha: false, depth: false, antialias: false, powerPreference: "high-performance", premultipliedAlpha: false, preserveDrawingBuffer: true });
-        //shadertoy Native Player init.
-        let stnPlayer = new STNativePlayer.STNPlayer(webgl2);
-        //new load tool object
-        let stLoader = new STNativePlayer.Loader();
-        let stoyResPath = `./res/sToy/${stoyName}`;
-        //to load stoy config
-        stLoader.loadSToy(stoyResPath).then((stoyD) => {
-            //load end ,run to renderer
-            stnPlayer.run(stoyD);
-        });
-        //refresh Canvas Size on window resize
-        window.onresize = () => {
-            stnPlayer.refreshCanvasSize();
-        }
-    }
+                    <div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto">LOCALSDTOY</h1>
+                    </div>
 
-</script>
-
-
-LOCALSDTOY
-LOCALSDTOY
-
-Local Shadertoy Renderer using WebGL 2.0
-
-Main Page URL : https://disini.github.io/LOCALSDTOY/
-
-Demo Lists :
-
-BeautyClouds
-
-Cook-Torrance
-
-happyJumping
-
-PlanetShadertoy
-
-ProteanClouds
-
-RaymarchingMirror
-
-raymarchingPrimitives
-
-seascape
-
-SnowMountain
-
-TinyPlanetClouds []](https://disini.github.io/LOCALSDTOY/?TinyPlanetClouds "TinyPlanetClouds")
-
-WetStone
-
-About
-LOCALSDTOY
-
-Resources
-Readme
-License
-MIT license
-Activity
-Stars
-0 stars
-Watchers
-1 watching
-Forks
-0 forks
-Releases
-No releases published
-Create a new release
-Packages
-No packages published
-Publish your first package
-Deployments
-5
-github-pages
-+ 4 deployments
-Languages
-GLSL
-90.9%
-
-TypeScript
-7.0%
-
-HTML
-2.1%
-Footer
-© 2024 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact
-Manage cookies
-
-
+                    <p dir="auto">LOCALSDTOY</p>
+                    <p dir="auto">Local Shadertoy Renderer using WebGL 2.0</p>
+                    <p dir="auto">Main Page URL :
+                        <a href="https://disini.github.io/LOCALSDTOY/" rel="nofollow" one-link-mark="yes">https://disini.github.io/LOCALSDTOY/<br></a></p>
+                    <p dir="auto">Demo Lists :</p>
+                    <p dir="auto"><a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?BeautyClouds" title="BeautyClouds" rel="nofollow" one-link-mark="yes">BeautyClouds<br></a>
+                        <a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?BeautyClouds" title="BeautyClouds" rel="nofollow" one-link-mark="yes"><img src="./images/screenshots/BeautyClouds.png" alt="" style="max-width: 100%;"><br></a></p>
+                    <p dir="auto"><a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?Cook-Torrance" title="Cook-Torrance" rel="nofollow" one-link-mark="yes">Cook-Torrance<br></a>
+                        <a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?Cook-Torrance" title="Cook-Torrance" rel="nofollow" one-link-mark="yes"><img src="./images/screenshots/Cook-Torrance.png" alt="" style="max-width: 100%;"><br></a></p>
+                    <p dir="auto"><a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?happyJumping" title="happyJumping" rel="nofollow" one-link-mark="yes">happyJumping<br></a>
+                        <a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?happyJumping" title="happyJumping" rel="nofollow" one-link-mark="yes"><img src="./images/screenshots/happyJumping.png" alt="" style="max-width: 100%;"><br></a></p>
+                    <p dir="auto"><a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?PlanetShadertoy" title="PlanetShadertoy" rel="nofollow" one-link-mark="yes">PlanetShadertoy<br></a>
+                        <a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?PlanetShadertoy" title="PlanetShadertoy" rel="nofollow" one-link-mark="yes"><img src="./images/screenshots/PlanetShadertoy.png" alt="" style="max-width: 100%;"><br></a></p>
+                    <p dir="auto"><a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?ProteanClouds" title="ProteanClouds" rel="nofollow" one-link-mark="yes">ProteanClouds<br></a>
+                        <a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?ProteanClouds" title="ProteanClouds" rel="nofollow" one-link-mark="yes"><img src="./images/screenshots/ProteanClouds.png" alt="" style="max-width: 100%;"><br></a></p>
+                    <p dir="auto"><a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?RaymarchingMirror" title="RaymarchingMirror" rel="nofollow" one-link-mark="yes">RaymarchingMirror<br></a>
+                        <a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?RaymarchingMirror" title="RaymarchingMirror" rel="nofollow" one-link-mark="yes"><img src="./images/screenshots/RaymarchingMirror.png" alt="" style="max-width: 100%;"><br></a></p>
+                    <p dir="auto"><a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?raymarchingPrimitives" title="raymarchingPrimitives" rel="nofollow" one-link-mark="yes">raymarchingPrimitives<br></a>
+                        <a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?raymarchingPrimitives" title="raymarchingPrimitives" rel="nofollow" one-link-mark="yes"><img src="./images/screenshots/raymarchingPrimitives.png" alt="" style="max-width: 100%;"><br></a></p>
+                    <p dir="auto"><a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?seascape" title="seascape" rel="nofollow" one-link-mark="yes">seascape<br></a>
+                        <a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?seascape" title="seascape" rel="nofollow" one-link-mark="yes"><img src="./images/screenshots/seascape.png" alt="" style="max-width: 100%;"><br></a></p>
+                    <p dir="auto"><a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?SnowMountain" title="SnowMountain" rel="nofollow" one-link-mark="yes">SnowMountain<br></a>
+                        <a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?SnowMountain" title="SnowMountain" rel="nofollow" one-link-mark="yes"><img src="./images/screenshots/SnowMountain.png" alt="" style="max-width: 100%;"><br></a></p>
+                    <p dir="auto"><a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?TinyPlanetClouds" title="TinyPlanetClouds" rel="nofollow" one-link-mark="yes">TinyPlanetClouds<br></a>
+                        <a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?TinyPlanetClouds" title="TinyPlanetClouds" rel="nofollow" one-link-mark="yes"><img src="./images/screenshots/TinyPlanetClouds.png" alt="" style="max-width: 100%;"><br></a></p>
+                    <p dir="auto"><a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?Cook-Torrance" title="WetStone" rel="nofollow" one-link-mark="yes">WetStone<br></a>
+                        <a href="https://disini.github.io/LOCALSDTOY/WebglTest.html?Cook-Torrance" title="WetStone" rel="nofollow" one-link-mark="yes"><img src="./images/screenshots/WetStone.png" alt="" style="max-width: 100%;"><br></a></p>
+                </article>
+            </div>
+    </body>
 </html>
