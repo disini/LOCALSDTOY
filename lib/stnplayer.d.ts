@@ -21,10 +21,14 @@ declare namespace STNativePlayer {
         private canvas;
         private mMouseOriX;
         private mMouseOriY;
+        private mMouseOriZ;
         private mMousePosX;
         private mMousePosY;
+        private mMousePosZ;
         private mMouseIsDown;
+        private mMouseIsUp;
         private mMouseSignalDown;
+        private mMouseSignalUp;
         protected loop: () => void;
         constructor(webgl2: WebGL2RenderingContext);
         private onmouseup;

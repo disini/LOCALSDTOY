@@ -4,6 +4,7 @@ namespace STNativePlayer {
 
     export class STNPlayer {
         private static readonly INSERT_TAG = `//=#*INSERT_LOCATION*#=`;
+        // 替换之后shader的行数需要加上22行！
         private webgl2: WebGL2RenderingContext;
         private canvas: HTMLCanvasElement;
         private mMouseOriX: number = 0;
@@ -13,7 +14,9 @@ namespace STNativePlayer {
         private mMousePosY: number = 0;
         private mMousePosZ: number = 1.0;
         private mMouseIsDown: boolean = false;
+        private mMouseIsUp: boolean = true;
         private mMouseSignalDown: boolean = false;
+        private mMouseSignalUp: boolean = true;
         protected loop:()=>void;
 
         constructor(webgl2: WebGL2RenderingContext) {
@@ -29,7 +32,13 @@ namespace STNativePlayer {
 
         private onmouseup(ev) {
             this.mMouseIsDown = false;
+            this.mMouseSignalDown = false;
+
+            this.mMouseIsUp = true;
+            this.mMouseSignalUp = true;
+
             // if (this.mIsPaused) this.mForceFrame = true;
+            // this.loop();
         }
 
         private onmousemove(ev) {
@@ -50,6 +59,8 @@ namespace STNativePlayer {
             this.mMousePosY = this.mMouseOriY;
             this.mMouseIsDown = true;
             this.mMouseSignalDown = true;
+            this.mMouseIsUp = false;
+            this.mMouseSignalUp = false;
             // if (this.mIsPaused) this.mForceFrame = true;
         }
 
@@ -111,7 +122,7 @@ namespace STNativePlayer {
             }
 
             //attrib 更新
-            //pos 
+            //pos
             let aPositionAddr = gl.getAttribLocation(program, "a_Position");    //先获取 Attrib 的 名为 "a_Position" 字段的地址
             gl.bindBuffer(gl.ARRAY_BUFFER, fullMesh.glPosBuffer);   //指定当前被操作的 缓冲区对象
             //告诉显卡从当前绑定的缓冲区（bindBuffer()指定的缓冲区）中读取顶点数据 (怎么去读取数据)

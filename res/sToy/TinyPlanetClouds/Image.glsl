@@ -622,7 +622,8 @@ vec3 illuminate(
 // ----------------------------------------------------------------------------
 vec3 render(
 	_in(ray_t) eye,
-	_in(vec3) point_cam
+	_in(vec3) point_cam,
+	_in(float) curTime
 ){
 	mat3 rot_y = rotate_around_y(27.);
 	mat3 rot = mul(rotate_around_x(u_time * -12.), rot_y);
@@ -634,6 +635,7 @@ vec3 render(
         rot_cloud = mul(rot_cloud, rotate_around_x(u_mouse.y));
     }
 
+//	u_mouse.z = -1.0;
 	sphere_t atmosphere = planet;
 	atmosphere.radius += max_height;
 
@@ -703,6 +705,10 @@ void mainImage(
 	_in(vec2) fragCoord
 #endif
 ){
+	float time = iTime * 0.3 + iMouse.x*0.01;
+	
+//	float curTime = time;
+	
 	// assuming screen width is larger than height 
 	vec2 aspect_ratio = vec2(u_res.x / u_res.y, 1);
 
@@ -723,7 +729,8 @@ void mainImage(
 
 	ray_t ray = get_primary_ray(point_cam, eye, look_at);
 
-	color += render(ray, point_cam);
+//	color += render(ray, point_cam);
+	color += render(ray, point_cam, time);
 
 	fragColor = vec4(linear_to_srgb(color), 1);
 }

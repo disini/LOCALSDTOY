@@ -434,23 +434,24 @@ vec3 raytrace( vec3 ro, vec3 rd)
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
 	vec2 q = fragCoord.xy/iResolution.xy;
-    vec2 p = -1.0+2.0*q;
+    	vec2 p = -1.0+2.0*q;
 	p.x *= iResolution.x/iResolution.y;
 		 
-	float Time = 0.45*(15.0 + iTime);
+	//float Time = 0.45*(15.0 + iTime);
+	float Time = 0.45*(15.0 + iTime) + iMouse.x*0.01;
 	// camera	
 	vec3 ro = vec3( 8.0*cos(Time), 6.0, 8.0*sin(Time) );
 //	vec3 ro = vec3( -8.0, 6.0, 8.0 );
 	vec3 ta = vec3( 0.0, 2.5, 0. );
 
 	vec2 m = iMouse.xy / iResolution.xy;
-	if( iMouse.z>0.0 )
-	{
-		float hd = -m.x * 14.0 + 3.14159;
-		float elv = m.y * 3.14159 * 0.4 - 3.14159 * 0.25;
-		ro = vec3(sin(hd) * cos(elv), sin(elv), cos(hd) * cos(elv));
-		ro = ro * 8.0 + vec3(0.0, 6.0, 0.0);
-	}
+//	if( iMouse.z>0.0 )
+//	{
+//		float hd = -m.x * 14.0 + 3.14159;
+//		float elv = m.y * 3.14159 * 0.4 - 3.14159 * 0.25;
+//		ro = vec3(sin(hd) * cos(elv), sin(elv), cos(hd) * cos(elv));
+//		ro = ro * 8.0 + vec3(0.0, 6.0, 0.0);
+//	}
 	
 	// camera tx
 	vec3 cw = normalize( ta-ro );
